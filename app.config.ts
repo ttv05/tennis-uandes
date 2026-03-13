@@ -32,7 +32,7 @@ const env = {
   appSlug: "tenis-uandes",
   // S3 URL of the app logo - set this to the URL returned by generate_image when creating custom logo
   // Leave empty to use the default icon from assets/images/icon.png
-  logoUrl: "",
+  logoUrl: "https://d2xsxph8kpxj0f.cloudfront.net/310519663377657983/WbxLg6MY3Lgkr7pbKgoP3y/icon-GVsuK4YGthtbE6yzBKgSke.webp",
   scheme: schemeFromBundleId,
   iosBundleId: bundleId,
   androidPackage: bundleId,
