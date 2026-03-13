@@ -85,3 +85,31 @@
 
 ## Completed Items
 (None yet - tracking starts from first implementation)
+
+
+## Phase 8: Conversión a PWA (Progressive Web App)
+
+### Web Optimization
+- [ ] Optimizar responsive design para navegadores móviles
+- [ ] Mejorar viewport y escalado
+- [ ] Ajustar tamaños de botones para touch
+- [ ] Optimizar imágenes para web
+
+### PWA Implementation
+- [ ] Crear manifest.json para instalación
+- [ ] Implementar Service Worker
+- [ ] Agregar soporte offline
+- [ ] Crear splash screen para PWA
+- [ ] Agregar iconos para diferentes tamaños
+
+### Performance
+- [ ] Optimizar bundle size
+- [ ] Implementar lazy loading
+- [ ] Mejorar Core Web Vitals
+- [ ] Cachear assets estáticos
+
+### Deployment
+- [ ] Configurar HTTPS
+- [ ] Crear guía de instalación
+- [ ] Documentar acceso por navegador
+- [ ] Probar en iOS Safari y Chrome Android

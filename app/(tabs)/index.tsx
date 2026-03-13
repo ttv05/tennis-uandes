@@ -2,6 +2,7 @@ import { useEffect, useState } from "react";
 import { ScrollView, Text, View, Pressable, ActivityIndicator } from "react-native";
 import { useRouter } from "expo-router";
 import { ScreenContainer } from "@/components/screen-container";
+import { PWAInstallBanner } from "@/components/pwa-install-banner";
 import { useAuth } from "@/hooks/use-auth";
 import { useColors } from "@/hooks/use-colors";
 import { trpc } from "@/lib/trpc";
@@ -91,9 +92,10 @@ export default function HomeScreen() {
   };
 
   return (
-    <ScreenContainer className="p-6">
+    <ScreenContainer className="p-0">
+      <PWAInstallBanner />
       <ScrollView contentContainerStyle={{ flexGrow: 1 }} showsVerticalScrollIndicator={false}>
-        <View className="gap-6">
+        <View className="gap-6 p-6">
           {/* Header */}
           <View className="gap-2">
             <Text className="text-3xl font-bold text-foreground">Próximos Entrenamientos</Text>
