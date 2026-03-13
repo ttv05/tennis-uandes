@@ -5,6 +5,7 @@ import { systemRouter } from "./_core/systemRouter";
 import { publicProcedure, protectedProcedure, router } from "./_core/trpc";
 import * as db from "./db";
 import { processCalendarImage, convertOCRBlocksToAvailability } from "./ocr-processor";
+import * as stats from "./statistics";
 
 export const appRouter = router({
   // if you need to use socket.io, read and register route in server/_core/index.ts, all api should start with '/api/' so that the gateway can route correctly
@@ -170,6 +171,35 @@ export const appRouter = router({
           confidence: ocrResult.confidence,
           message: "Calendar processed successfully. Please review and confirm your availability.",
         };
+      }),
+  }),
+  statistics: router({
+    getUserStats: protectedProcedure.query(async ({ ctx }) => {
+      return stats.getUserAttendanceStats(ctx.user.id);
+    }),
+    getTeamPlayerStats: protectedProcedure.query(async ({ ctx }) => {
+      if (!ctx.user.teamId) {
+        return [];
+      }
+      return stats.getTeamPlayerStats(ctx.user.teamId);
+    }),
+    getTeamTrainingStats: protectedProcedure.query(async ({ ctx }) => {
+      if (!ctx.user.teamId) {
+        return {
+          totalTrainings: 0,
+          averageAttendance: 0,
+          maleTrainings: 0,
+          femaleTrainings: 0,
+          mixedTrainings: 0,
+          totalPlayers: 0,
+        };
+      }
+      return stats.getTeamTrainingStats(ctx.user.teamId);
+    }),
+    getAttendanceTrend: protectedProcedure
+      .input(z.object({ weeks: z.number().optional() }))
+      .query(async ({ ctx, input }) => {
+        return stats.getAttendanceTrend(ctx.user.id, input.weeks || 12);
       }),
   }),
   confirmations: router({

@@ -113,3 +113,19 @@
 - [ ] Crear guía de instalación
 - [ ] Documentar acceso por navegador
 - [ ] Probar en iOS Safari y Chrome Android
+
+
+## Phase 9: Estadísticas de Asistencia
+
+### Backend
+- [ ] Crear tabla de estadísticas agregadas
+- [ ] Implementar rutas tRPC para obtener estadísticas
+- [ ] Calcular tasa de asistencia por jugador
+- [ ] Generar gráficos de tendencias
+
+### Frontend
+- [ ] Crear pantalla de estadísticas
+- [ ] Implementar gráficos con Chart.js
+- [ ] Mostrar ranking de asistencia
+- [ ] Agregar tab de estadísticas en navegación
+- [ ] Mostrar métricas por período (semana, mes, año)

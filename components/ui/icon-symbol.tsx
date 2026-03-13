@@ -20,6 +20,7 @@ const MAPPING = {
   "chevron.right": "chevron-right",
   "calendar": "calendar-today",
   "person.fill": "person",
+  "chart.bar.fill": "bar-chart",
 } as IconMapping;
 
 /**
